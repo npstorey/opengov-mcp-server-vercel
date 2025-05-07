@@ -4,8 +4,7 @@
   "private": true,
   "type": "commonjs",
   "scripts": {
-    "dev": "vercel dev",
-    "start": "node api/server.ts"
+    "dev": "vercel dev"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.10.2",
