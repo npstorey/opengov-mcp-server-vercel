@@ -1,16 +1,12 @@
 {
-  "build": {
-    "installCommand": "pnpm install --no-frozen-lockfile",
-    "buildCommand": "echo \"skip build\"",
-    "outputDirectory": "."
-  },
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/server.ts" }
-  ],
+  "version": 2,
   "functions": {
     "api/server.ts": {
       "maxDuration": 60,
       "memory": 1024
     }
-  }
+  },
+  "routes": [
+    { "src": "/(.*)", "dest": "/api/server.ts" }
+  ]
 }
