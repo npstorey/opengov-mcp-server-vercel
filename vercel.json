@@ -1,8 +1,23 @@
 {
-  "rewrites": [{ "source": "/(.+)", "destination": "/api/server" }],
+  // 1) Force pnpm to ignore frozen-lockfile
+  "build": {
+    "installCommand": "pnpm install --no-frozen-lockfile",
+    // 2) No build step required
+    "buildCommand": "echo \"skip build\"",
+    // 3) We’re just shipping a Serverless Function, so no output dir
+    "outputDirectory": "."
+  },
+
+  // 4) All incoming paths go to your API entrypoint
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/server.ts" }
+  ],
+
+  // 5) Configure your function’s timeout etc.
   "functions": {
     "api/server.ts": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "memory": 1024
     }
   }
 }
