@@ -2,7 +2,7 @@
   "name": "mcp-on-vercel",
   "version": "1.0.0",
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "vercel dev",
     "start": "node api/server.ts"
