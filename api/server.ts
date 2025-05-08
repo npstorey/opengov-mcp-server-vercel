@@ -1,6 +1,6 @@
 // api/server.ts
-import { Server } from "@modelcontextprotocol/sdk/server";
-import { HttpServerTransport } from "@modelcontextprotocol/sdk/server/http";
+import { Server } from "@modelcontextprotocol/sdk/server/index.js";
+import { HttpServerTransport } from "@modelcontextprotocol/sdk/server/http/index.js";
 import createMcpServer from "opengov-mcp-server";
 
 // 1) Pull in your Socrata portal URL
